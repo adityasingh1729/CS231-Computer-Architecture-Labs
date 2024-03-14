@@ -1,0 +1,22 @@
+
+
+	global _start
+
+	section .text
+
+
+	
+_start:	push rbp
+        mov rbp, rsp
+        push rax
+	push r8
+	push r9
+	mov r8, 1
+	mov r9, 2
+	add r8, r9
+	mov rax, r8
+	pop r9
+	pop r8
+	mov rsp, rbp
+	pop rbp
+	ret
