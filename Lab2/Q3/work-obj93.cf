@@ -1,0 +1,13 @@
+v 4
+file . "CHORD_test.vhd" "d1d88c3930c8691035a2c72ccf37ac4778017160" "20230918180145.558":
+  entity ascii_read_test at 1( 0) + 0 on 471;
+  architecture reader of ascii_read_test at 9( 139) + 0 on 472;
+file . "CHORD.vhd" "c3a959abed7fe0f1cff3da2c21ad953926910a74" "20230918180143.967":
+  entity chordencoder at 1( 0) + 0 on 469;
+  architecture behaviour of chordencoder at 12( 280) + 0 on 470;
+file . "CHORD_final_try.vhd" "6de262ceebd0087d7ecf846f79d2cf930035a844" "20230918135107.448":
+  entity chordencoder2 at 1( 0) + 0 on 169;
+  architecture behaviour of chordencoder2 at 14( 344) + 0 on 170;
+file . "CHORD_VIS.vhd" "40d98eacb7f799bc92a2f8fe96dcc7030a96b87b" "20230918140612.647":
+  entity chord_encoder at 1( 0) + 0 on 183;
+  architecture behaviour of chord_encoder at 15( 351) + 0 on 184;

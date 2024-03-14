@@ -1,0 +1,6 @@
+To run ghdl on Terminal:
+
+ghdl -a and_tb.vhd                                
+ghdl -e and_tb
+ghdl -r and_tb --stop-time=8ns --vcd=and_tb.vcd
+gtkwave and_tb.vcd

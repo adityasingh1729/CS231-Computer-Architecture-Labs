@@ -1,0 +1,30 @@
+01000011
+01000101
+01000111
+01000011
+01000101
+
+if buff(0) /= "00000000" then
+          outputArray(out_ptr) <= buff(0);
+          out_ptr := out_ptr + 1;
+          report "buff(0) input " & vector_to_string(outputArray(out_ptr));
+          buff(0) <= "00000000";
+        end if;
+        if buff(1) /= "00000000" then
+          outputArray(out_ptr) <= buff(1);
+          out_ptr := out_ptr + 1;
+          report "buff(1) input " & vector_to_string(outputArray(out_ptr));
+          buff(1) <= "00000000";
+        end if;
+        if buff(2) /= "00000000" then
+          outputArray(out_ptr) <= buff(2);
+          out_ptr := out_ptr + 1;
+          report "buff(0) input " & vector_to_string(outputArray(out_ptr));
+          buff(2) <= "00000000";
+        end if;
+        if buff(3) /= "00000000" then
+          outputArray(out_ptr) <= buff(3);
+          out_ptr := out_ptr + 1;
+          report "buff(1) input " & vector_to_string(outputArray(out_ptr));
+          buff(3) <= "00000000";
+        end if;

@@ -1,0 +1,71 @@
+$date
+  Thu Sep  7 22:02:27 2023
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module or_tb $end
+$var reg 1 ! i1 $end
+$var reg 1 " i2 $end
+$var reg 1 # g $end
+$scope module dut_instance $end
+$var reg 1 $ x1 $end
+$var reg 1 % x2 $end
+$var reg 1 & y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+0"
+0#
+0$
+0%
+0&
+#1000000
+1"
+1#
+1%
+1&
+#2000000
+1!
+0"
+1$
+0%
+#3000000
+1"
+1%
+#4000000
+0!
+0"
+0#
+0$
+0%
+0&
+#5000000
+1"
+1#
+1%
+1&
+#6000000
+1!
+0"
+1$
+0%
+#7000000
+1"
+1%
+#8000000
+0!
+0"
+0#
+0$
+0%
+0&
