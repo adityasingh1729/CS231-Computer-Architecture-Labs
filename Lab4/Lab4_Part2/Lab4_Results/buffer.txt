@@ -1,0 +1,47 @@
+#include <algorithm>
+#include <cassert>
+#include <map>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+
+#include "cache.h"
+
+namespace {
+    std::map<CACHE*, std::vector<bool>> binary_order; // Add a map to keep track of binary insertion order
+}
+
+void CACHE::initialize_replacement() { 
+    ::binary_order[this] = std::vector<bool>(NUM_SET * NUM_WAY, false); // Initialize the binary insertion order vector
+    std::srand(std::time(nullptr)); // Seed the random number generator
+}
+
+uint32_t CACHE::find_victim(uint32_t triggering_cpu, uint64_t instr_id, uint32_t set, const BLOCK* current_set, uint64_t ip, uint64_t full_addr, uint32_t type) {
+    auto begin = std::next(std::begin(::binary_order[this]), set * NUM_WAY);
+    auto end = std::next(begin, NUM_WAY);
+
+    // Find the LRU victim
+    uint32_t victim = 0;
+    for (uint32_t i = 0; i < NUM_WAY; ++i) {
+        if (begin[i] == true) {
+            victim = i;
+            break;
+        }
+    }
+    ::binary_order[this][set * NUM_WAY + victim] = true; // Set the chosen way to true for LRU insertion
+
+    return victim; 
+}
+
+void CACHE::update_replacement_state(uint32_t triggering_cpu, uint32_t set, uint32_t way, uint64_t full_addr, uint64_t ip, uint64_t victim_addr, uint32_t type, uint8_t hit) {
+    // Determine whether to insert in MRU or LRU based on probability 'e'
+    double e = 0.5; // Set the probability 'e'
+    if (std::rand() / static_cast<double>(RAND_MAX) < e) {
+        // Update the binary insertion order for the accessed way based on MRU insertion
+        ::binary_order[this].at(set * NUM_WAY + way) = false;
+    } else {
+        // Do not update the binary insertion order for the accessed way based on LRU insertion
+    }
+}
+
+void CACHE::replacement_final_stats() {}
